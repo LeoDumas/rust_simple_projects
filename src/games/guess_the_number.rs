@@ -2,6 +2,7 @@ pub fn guess_the_number() {
     use rand::Rng;
     use std::io;
 
+    // Select random number between 1 and 100
     let number = rand::thread_rng().gen_range(1..=100);
     println!("Guess the number!");
     let mut tries: i32 = 0;
@@ -10,7 +11,6 @@ pub fn guess_the_number() {
         io::Write::flush(&mut io::stdout()).expect("Failed to flush stdout");
 
         let mut guess = String::new();
-
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
